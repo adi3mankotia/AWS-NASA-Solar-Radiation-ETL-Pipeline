@@ -112,12 +112,11 @@ This screenshot shows Athena querying the final Glue Data Catalog table.
 
 ## Athena Analytics
 
-### Q1: Solar Suitability Score
+## Q1: Solar Suitability Ranking
 
-This query creates a custom solar suitability score using solar radiation, precipitation, and temperature.
+This query uses the same custom scoring method to rank the best solar days.
 
-```sql
-SELECT 
+```SELECT 
     date,
     city,
     temperature_c,
@@ -135,6 +134,8 @@ SELECT
 FROM "AwsDataCatalog"."etl_pipeline"."nasa_parquet_datalake"
 ORDER BY solar_suitability_score DESC;
 ```
+
+This output is useful as a decision-support table for identifying the strongest city-date combinations for solar generation potential.
 
 ![Solar Suitability Score](screenshots/solar_suitability_score.png)
 
