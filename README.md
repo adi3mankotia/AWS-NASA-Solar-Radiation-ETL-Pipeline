@@ -201,33 +201,7 @@ ORDER BY city, date;
 
 This query smooths daily solar radiation changes and supports time-series analysis.
 
-### Q5: Solar Suitability Ranking
-
-This query uses the same custom scoring method to rank the best solar days.
-
-```sql
-SELECT 
-    date,
-    city,
-    temperature_c,
-    precipitation_mm_day,
-    solar_radiation_kwh_m2_day,
-    ROUND(
-        (solar_radiation_kwh_m2_day * 10)
-        - (precipitation_mm_day * 0.5)
-        + CASE 
-            WHEN temperature_c BETWEEN 15 AND 28 THEN 5
-            ELSE 0
-          END,
-        2
-    ) AS solar_suitability_score
-FROM "AwsDataCatalog"."etl_pipeline"."nasa_parquet_datalake"
-ORDER BY solar_suitability_score DESC;
-```
-
-This output is useful as a decision-support table for identifying the strongest city-date combinations for solar generation potential.
-
-### Q6: ML-Ready Feature Engineering Table
+### Q5: ML-Ready Feature Engineering Table
 
 This query creates time-series features that could be used for a future solar radiation forecasting model.
 
