@@ -309,6 +309,6 @@ Future improvements could include:
 * Automating visualization generation with Python
 * Deploying infrastructure using Terraform or AWS SAM
 
-## Resume Bullet
+## Short Bullet
 
 Built a serverless AWS ETL pipeline using EventBridge, Lambda, S3, Glue, and Athena to ingest NASA POWER climate data, validate missing API values, transform nested JSON into partitioned Parquet, and run SQL-based solar energy analytics with heat maps, custom suitability scoring, correlation analysis, and ML-ready time-series features.
