@@ -53,9 +53,6 @@ The pipeline follows this workflow:
 9. **Amazon Athena** queries the final data lake table.
 10. Athena results are exported to Excel for visualization.
 
-## Architecture Diagram
-
-![Architecture Diagram](screenshots/architecture_diagram.png)
 
 ## S3 Data Lake Structure
 
